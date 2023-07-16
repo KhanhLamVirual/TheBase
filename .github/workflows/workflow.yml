@@ -9,6 +9,27 @@ on:
       - main
 
 jobs:
+  
+  if_merged:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest-16-cores
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set Up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          server-id: github
+
+      - name: Setup Dependency
+        run: mvn dependency:tree
+      
+      - name: Jar File
+        run : mvn compile package
+
+
+  
   build:
 
     runs-on: ubuntu-latest
