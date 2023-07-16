@@ -13,11 +13,7 @@ public class App extends Plugin
     @Override
     public void init() 
     {
-        new Timer();
-        new AddResources();
-        new RulesApply();
-        new LockTurretAndUnitFactory();
-        new PlayerAdminOwner();
+      EventCenter.EventLoad();
     }
 
     @Override
