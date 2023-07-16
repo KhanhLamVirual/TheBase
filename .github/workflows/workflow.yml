@@ -3,33 +3,12 @@
 
 name: CI Compile Jar
 
-on:
-  pull_request:
-    branches:
-      - main
+on: ["pull_request", "workflow_dispatch"]
+
+permissions:
+  contents: read
 
 jobs:
-  
-  if_merged:
-    if: github.event.pull_request.merged == true
-    runs-on: ubuntu-latest-16-cores
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set Up Java
-        uses: actions/setup-java@v3
-        with:
-          java-version: '11'
-          distribution: 'temurin'
-          server-id: github
-
-      - name: Setup Dependency
-        run: mvn dependency:tree
-      
-      - name: Jar File
-        run : mvn compile package
-
-
-  
   build:
 
     runs-on: ubuntu-latest
@@ -45,7 +24,6 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
-        settings-path: ${{ github.workspace }} # location for the settings.xml file
 
     - name: Setup Dependency
       run: mvn dependency:tree
