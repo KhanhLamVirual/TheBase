@@ -12,5 +12,6 @@ public class EventCenter {
     new PlayerAdminOwner();
     new RulesApply();
     new Timer();
+    new LockUnit();
   }
 }
