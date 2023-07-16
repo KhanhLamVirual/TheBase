@@ -3,7 +3,7 @@
 
 name: CI Compile Jar
 
-on: ["pull_request", "workflow_dispatch"]
+on: ["pull_request", "workflow_dispatch", "push"]
 
 permissions:
   contents: read
