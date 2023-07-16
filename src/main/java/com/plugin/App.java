@@ -1,6 +1,5 @@
 package com.plugin;
 
-
 import mindustry.gen.Player;
 import mindustry.mod.Plugin;
 
@@ -20,5 +19,10 @@ public class App extends Plugin
     public void registerClientCommands(CommandHandler handler) 
     {
       handler.<Player>register("changeteam", "", "Chuyển Team", (args, player) -> new ClientCommands(args, player));
+    }
+    @Override
+    public void registerServerCommands(CommandHandler handler) 
+    {
+
     }
 }
