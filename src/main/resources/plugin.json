@@ -1,6 +1,7 @@
 {
     "name":"vndustry",
     "displayName":"Vndustry",
+    "author":"KhanhLamVirual",
     "version":1,
     "main":"com.plugin.App"
 }
