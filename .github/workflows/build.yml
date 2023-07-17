@@ -11,14 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions@checkout@v2
+        uses: actions/checkout@v2
       - name: setup Dependency
         run: mvn dependency:tree
       - name: compile and build code
         run: mvn compile package
       - name: release building
         id: create_relase
-        uses: actions@create-release@v1
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
