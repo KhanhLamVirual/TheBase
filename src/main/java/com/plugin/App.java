@@ -23,6 +23,5 @@ public class App extends Plugin
     @Override
     public void registerServerCommands(CommandHandler handler) 
     {
-
     }
 }
