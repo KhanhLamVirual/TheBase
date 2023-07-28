@@ -17,7 +17,7 @@ public class RulesApply {
 
             rule.unitBuildSpeedMultiplier = 15;
             rule.buildSpeedMultiplier = 15;
-            rule.bannedUnits.add(UnitTypes.corvus);
+            
         });
     }
 }
